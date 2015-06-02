@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PhotoMap.xcodeproj">
+      location = "self:/Users/vineettiwari/Desktop/PhotoMap/PhotoTrip.xcodeproj">
    </FileRef>
 </Workspace>
