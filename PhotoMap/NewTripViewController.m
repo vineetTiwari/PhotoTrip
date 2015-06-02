@@ -32,8 +32,6 @@
   trip.name = self.tripNameTextField.text;
 
   trip.date  = [[NSDate alloc] init];
-  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-  [dateFormat setDateFormat:@"MMMM dd, YYYY"];
   [coreDataStack saveContext];
 
 }
@@ -45,6 +43,13 @@
   [self dismissViewControllerAnimated:YES completion:nil];
   
 }
+
+- (IBAction)neverMindButtonPressed:(UIButton *)sender {
+
+  [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 
 @end
 

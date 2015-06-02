@@ -8,8 +8,12 @@
 
 #import "TripTableViewController.h"
 #import "NewTripViewController.h"
+#import "CoreDataStack.h"
+#import "Trip.h"
 
 @interface TripTableViewController ()
+
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -17,23 +21,32 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
+  [self.fetchedResultsController performFetch:nil];
 }
 
 #pragma mark - TableViewControllerDataSource -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-  return 1;
+  id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController  sections][section];
+
+  return [sectionInfo numberOfObjects];
 
 }
-
-// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
+  Trip *trip = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+  cell.textLabel.text = trip.name;
+
+  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+  [dateFormat setDateFormat:@"MMMM dd, YYYY"];
+  
+  cell.detailTextLabel.text = [dateFormat stringFromDate:trip.date]; ;
 
   return cell;
 
@@ -49,6 +62,32 @@
     newTripTableViewController = (NewTripViewController *)segue.destinationViewController;
 
   }
+}
+
+#pragma mark - Fetching The Data -
+
+- (NSFetchRequest *)tripListfetchRequest {
+
+
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Trip"];
+
+  fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+
+  return fetchRequest;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+
+  if (_fetchedResultsController != nil) {
+
+    return _fetchedResultsController;
+  }
+
+  CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+  NSFetchRequest *fetchRequest = [self tripListfetchRequest];
+  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+  return _fetchedResultsController;
 }
 
 @end

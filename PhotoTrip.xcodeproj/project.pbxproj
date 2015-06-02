@@ -16,8 +16,8 @@
 		96EBB06A1B1E363300D4B281 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96EBB0681B1E363300D4B281 /* LaunchScreen.xib */; };
 		96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0751B1E363300D4B281 /* PhotoMapTests.m */; };
 		96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0801B1E366300D4B281 /* CoreDataStack.m */; };
-		96EBB0871B1E3CA000D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0861B1E3CA000D4B281 /* Trip.m */; };
 		96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0891B1E416000D4B281 /* NewTripViewController.m */; };
+		96EBB0C81B1E5E6B00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0C71B1E5E6B00D4B281 /* Trip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,10 @@
 		96EBB0751B1E363300D4B281 /* PhotoMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapTests.m; sourceTree = "<group>"; };
 		96EBB07F1B1E366300D4B281 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		96EBB0801B1E366300D4B281 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
-		96EBB0851B1E3CA000D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		96EBB0861B1E3CA000D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 		96EBB0881B1E416000D4B281 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
 		96EBB0891B1E416000D4B281 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
+		96EBB0C61B1E5E6B00D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		96EBB0C71B1E5E6B00D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 				96EBB0611B1E363300D4B281 /* TripTableViewController.m */,
 				96EBB0881B1E416000D4B281 /* NewTripViewController.h */,
 				96EBB0891B1E416000D4B281 /* NewTripViewController.m */,
-				96EBB0851B1E3CA000D4B281 /* Trip.h */,
-				96EBB0861B1E3CA000D4B281 /* Trip.m */,
+				96EBB0C61B1E5E6B00D4B281 /* Trip.h */,
+				96EBB0C71B1E5E6B00D4B281 /* Trip.m */,
 				96EBB0631B1E363300D4B281 /* Main.storyboard */,
 				96EBB0661B1E363300D4B281 /* Images.xcassets */,
 				96EBB0681B1E363300D4B281 /* LaunchScreen.xib */,
@@ -239,7 +239,7 @@
 			files = (
 				96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */,
 				96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */,
-				96EBB0871B1E3CA000D4B281 /* Trip.m in Sources */,
+				96EBB0C81B1E5E6B00D4B281 /* Trip.m in Sources */,
 				96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */,
 				96EBB0621B1E363300D4B281 /* TripTableViewController.m in Sources */,
 				96EBB0591B1E363300D4B281 /* main.m in Sources */,
