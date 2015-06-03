@@ -11,7 +11,6 @@
 #import "CoreDataStack.h"
 #import "Trip.h"
 #import "MapViewController.h"
-#import <MapKit/MapKit.h>
 
 @interface TripTableViewController ()<NSFetchedResultsControllerDelegate>
 

@@ -8,30 +8,75 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()
+@interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic) UIImagePickerController *imagePicker;
+
+- (IBAction)cameraButtonPressed:(id)sender;
 
 @end
 
 @implementation MapViewController
 
+#pragma mark - View controller life cycle -
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  [super viewDidLoad];
+
+  [self setupImagePicker];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UIImagePickerDelegate -
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+  UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+  [self showImageAsAPin:chosenImage];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
+#pragma mark - Actions -
+
+- (IBAction)cameraButtonPressed:(id)sender {
+  [self showPickerAlert];
+}
+
+#pragma mark - General methods -
+
+- (void)setupImagePicker {
+  self.imagePicker = [[UIImagePickerController alloc] init];
+  self.imagePicker.delegate = self;
+}
+
+- (void)showPickerAlert {
+  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+  UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Take photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self presentImagePickerCamera:YES];
+  }];
+  [alertController addAction:takePhoto];
+
+  UIAlertAction *library = [UIAlertAction actionWithTitle:@"Choose from library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self presentImagePickerCamera:NO];
+  }];
+  [alertController addAction:library];
+
+  [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)presentImagePickerCamera:(BOOL)camera {
+  self.imagePicker.sourceType = camera ?
+  UIImagePickerControllerSourceTypeCamera:
+  UIImagePickerControllerSourceTypePhotoLibrary;
+
+  [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+- (void)showImageAsAPin:(UIImage *)image {
+
+}
 
 @end

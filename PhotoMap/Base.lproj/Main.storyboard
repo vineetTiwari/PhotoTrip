@@ -80,7 +80,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Trip Map" id="Mdc-Je-yif">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="baR-Lk-gZq"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="baR-Lk-gZq">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="Txh-2c-zuL" id="rgE-Np-Lyk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="718-Ex-Bdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
