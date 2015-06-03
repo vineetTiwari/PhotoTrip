@@ -32,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Txh-2c-zuL" kind="show" identifier="show" id="D24-bc-4uR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,6 +53,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AYt-xH-Mle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048" y="277"/>
+        </scene>
+        <!--Trip Map-->
+        <scene sceneID="eyb-C6-xC9">
+            <objects>
+                <viewController id="Txh-2c-zuL" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Am7-t3-Lqf"/>
+                        <viewControllerLayoutGuide type="bottom" id="fAF-eH-yI9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bTo-YG-Spa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0VC-uD-wvq">
+                                <rect key="frame" x="0.0" y="5" width="600" height="595"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0VC-uD-wvq" firstAttribute="top" secondItem="bTo-YG-Spa" secondAttribute="top" constant="5" id="AqB-vC-72n"/>
+                            <constraint firstItem="0VC-uD-wvq" firstAttribute="leading" secondItem="bTo-YG-Spa" secondAttribute="leading" id="E5H-Kn-Mx2"/>
+                            <constraint firstAttribute="trailing" secondItem="0VC-uD-wvq" secondAttribute="trailing" id="Nxi-5z-4Nc"/>
+                            <constraint firstItem="fAF-eH-yI9" firstAttribute="top" secondItem="0VC-uD-wvq" secondAttribute="bottom" id="sLW-9t-ygu"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Trip Map" id="Mdc-Je-yif">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="baR-Lk-gZq"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="718-Ex-Bdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="277"/>
         </scene>
         <!--New Trip View Controller-->
         <scene sceneID="bVS-wH-140">

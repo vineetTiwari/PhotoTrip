@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../PhotoMap/Trip.h">
-   </FileRef>
-   <FileRef
-      location = "group:../PhotoMap/Trip.m">
-   </FileRef>
-   <FileRef
       location = "self:/Users/vineettiwari/Desktop/PhotoMap/PhotoTrip.xcodeproj">
    </FileRef>
 </Workspace>

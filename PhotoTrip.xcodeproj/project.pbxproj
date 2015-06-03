@@ -17,7 +17,12 @@
 		96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0751B1E363300D4B281 /* PhotoMapTests.m */; };
 		96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0801B1E366300D4B281 /* CoreDataStack.m */; };
 		96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0891B1E416000D4B281 /* NewTripViewController.m */; };
-		96EBB0C81B1E5E6B00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0C71B1E5E6B00D4B281 /* Trip.m */; };
+		96EBB0CF1B1E677000D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0CE1B1E677000D4B281 /* Trip.m */; };
+		96EBB0D01B1E677000D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0CE1B1E677000D4B281 /* Trip.m */; };
+		96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
+		96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
+		96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D51B1F890C00D4B281 /* MapKit.framework */; };
+		96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D71B1F891500D4B281 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +54,12 @@
 		96EBB0801B1E366300D4B281 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		96EBB0881B1E416000D4B281 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
 		96EBB0891B1E416000D4B281 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
-		96EBB0C61B1E5E6B00D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		96EBB0C71B1E5E6B00D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		96EBB0CD1B1E677000D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		96EBB0CE1B1E677000D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		96EBB0D11B1F885100D4B281 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		96EBB0D21B1F885100D4B281 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		96EBB0D51B1F890C00D4B281 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		96EBB0D71B1F891500D4B281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */,
+				96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,8 @@
 		96EBB04A1B1E363300D4B281 = {
 			isa = PBXGroup;
 			children = (
+				96EBB0D71B1F891500D4B281 /* CoreLocation.framework */,
+				96EBB0D51B1F890C00D4B281 /* MapKit.framework */,
 				96EBB0551B1E363300D4B281 /* PhotoMap */,
 				96EBB0721B1E363300D4B281 /* PhotoMapTests */,
 				96EBB0541B1E363300D4B281 /* Products */,
@@ -98,10 +111,12 @@
 				96EBB05B1B1E363300D4B281 /* AppDelegate.m */,
 				96EBB0601B1E363300D4B281 /* TripTableViewController.h */,
 				96EBB0611B1E363300D4B281 /* TripTableViewController.m */,
+				96EBB0D11B1F885100D4B281 /* MapViewController.h */,
+				96EBB0D21B1F885100D4B281 /* MapViewController.m */,
 				96EBB0881B1E416000D4B281 /* NewTripViewController.h */,
 				96EBB0891B1E416000D4B281 /* NewTripViewController.m */,
-				96EBB0C61B1E5E6B00D4B281 /* Trip.h */,
-				96EBB0C71B1E5E6B00D4B281 /* Trip.m */,
+				96EBB0CD1B1E677000D4B281 /* Trip.h */,
+				96EBB0CE1B1E677000D4B281 /* Trip.m */,
 				96EBB0631B1E363300D4B281 /* Main.storyboard */,
 				96EBB0661B1E363300D4B281 /* Images.xcassets */,
 				96EBB0681B1E363300D4B281 /* LaunchScreen.xib */,
@@ -157,9 +172,9 @@
 			productReference = 96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96EBB06E1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests */ = {
+		96EBB06E1B1E363300D4B281 /* PhotoTrip.Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.temp_caseinsensitive_renameTests" */;
+			buildConfigurationList = 96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.Tests" */;
 			buildPhases = (
 				96EBB06B1B1E363300D4B281 /* Sources */,
 				96EBB06C1B1E363300D4B281 /* Frameworks */,
@@ -170,7 +185,7 @@
 			dependencies = (
 				96EBB0711B1E363300D4B281 /* PBXTargetDependency */,
 			);
-			name = PhotoTrip.temp_caseinsensitive_renameTests;
+			name = PhotoTrip.Tests;
 			productName = PhotoMapTests;
 			productReference = 96EBB06F1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -207,7 +222,7 @@
 			projectRoot = "";
 			targets = (
 				96EBB0521B1E363300D4B281 /* PhotoTrip */,
-				96EBB06E1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests */,
+				96EBB06E1B1E363300D4B281 /* PhotoTrip.Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +254,8 @@
 			files = (
 				96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */,
 				96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */,
-				96EBB0C81B1E5E6B00D4B281 /* Trip.m in Sources */,
+				96EBB0CF1B1E677000D4B281 /* Trip.m in Sources */,
+				96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */,
 				96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */,
 				96EBB0621B1E363300D4B281 /* TripTableViewController.m in Sources */,
 				96EBB0591B1E363300D4B281 /* main.m in Sources */,
@@ -251,6 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */,
+				96EBB0D01B1E677000D4B281 /* Trip.m in Sources */,
 				96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +457,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.temp_caseinsensitive_renameTests" */ = {
+		96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96EBB07D1B1E363300D4B281 /* Debug */,

@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96EBB06E1B1E363300D4B281"
-               BuildableName = "PhotoTripTests.xctest"
-               BlueprintName = "PhotoTrip.temp_caseinsensitive_renameTests"
+               BuildableName = "PhotoTrip.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "PhotoTrip.Tests"
                ReferencedContainer = "container:PhotoTrip.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "96EBB06E1B1E363300D4B281"
-               BuildableName = "PhotoTripTests.xctest"
-               BlueprintName = "PhotoTrip.temp_caseinsensitive_renameTests"
+               BuildableName = "PhotoTrip.temp_caseinsensitive_renameTests.xctest"
+               BlueprintName = "PhotoTrip.Tests"
                ReferencedContainer = "container:PhotoTrip.xcodeproj">
             </BuildableReference>
          </TestableReference>
