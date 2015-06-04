@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic) UIImagePickerController *imagePicker;
+@property (nonatomic) CLLocation *currentLocation;
 
 - (IBAction)cameraButtonPressed:(id)sender;
 
@@ -57,6 +58,7 @@
   UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
   [self showImageAsAPin:chosenImage];
   [self dismissViewControllerAnimated:YES completion:nil];
+  [self showImageAsAPin:chosenImage];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -102,8 +104,13 @@
 
 - (void)showImageAsAPin:(UIImage *)image {
 
+  MKPointAnnotation *photoPin = [[MKPointAnnotation alloc] init];
+  CLLocationCoordinate2D currentPoint;
+  currentPoint.latitude = self.currentLocation.coordinate.latitude;
+  currentPoint.longitude = self.currentLocation.coordinate.longitude;
+  photoPin.coordinate = currentPoint;
+  photoPin.title = @"currentLocation";
 
-  
 }
 
 
@@ -117,12 +124,12 @@
 
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-  CLLocation *location = [locations firstObject];
+  self.currentLocation = [locations firstObject];
 
   if (!initialLocationSet){
 
     MKCoordinateRegion startingRegion;
-    CLLocationCoordinate2D loc = location.coordinate;
+    CLLocationCoordinate2D loc = self.currentLocation.coordinate;
     startingRegion.center = loc;
     startingRegion.span.latitudeDelta = 0.02;
     startingRegion.span.longitudeDelta = 0.02;
@@ -133,7 +140,7 @@
     initialLocationSet = true;
   }
 
-  NSLog(@"Got location %@", location);
+  NSLog(@"Got location %@", self.currentLocation);
 }
 
 #pragma mark - MKMapViewDelegate -
