@@ -17,12 +17,14 @@
 		96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0751B1E363300D4B281 /* PhotoMapTests.m */; };
 		96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0801B1E366300D4B281 /* CoreDataStack.m */; };
 		96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0891B1E416000D4B281 /* NewTripViewController.m */; };
-		96EBB0CF1B1E677000D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0CE1B1E677000D4B281 /* Trip.m */; };
-		96EBB0D01B1E677000D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0CE1B1E677000D4B281 /* Trip.m */; };
 		96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
 		96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
 		96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D51B1F890C00D4B281 /* MapKit.framework */; };
 		96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D71B1F891500D4B281 /* CoreLocation.framework */; };
+		96EBB0DB1B1FDE7A00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DA1B1FDE7A00D4B281 /* Trip.m */; };
+		96EBB0DC1B1FDE7A00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DA1B1FDE7A00D4B281 /* Trip.m */; };
+		96EBB0DF1B1FDE7A00D4B281 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DE1B1FDE7A00D4B281 /* Pin.m */; };
+		96EBB0E01B1FDE7A00D4B281 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DE1B1FDE7A00D4B281 /* Pin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +56,14 @@
 		96EBB0801B1E366300D4B281 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		96EBB0881B1E416000D4B281 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
 		96EBB0891B1E416000D4B281 /* NewTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTripViewController.m; sourceTree = "<group>"; };
-		96EBB0CD1B1E677000D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		96EBB0CE1B1E677000D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
 		96EBB0D11B1F885100D4B281 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		96EBB0D21B1F885100D4B281 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		96EBB0D51B1F890C00D4B281 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		96EBB0D71B1F891500D4B281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		96EBB0D91B1FDE7A00D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		96EBB0DA1B1FDE7A00D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		96EBB0DD1B1FDE7A00D4B281 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
+		96EBB0DE1B1FDE7A00D4B281 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +119,10 @@
 				96EBB0D21B1F885100D4B281 /* MapViewController.m */,
 				96EBB0881B1E416000D4B281 /* NewTripViewController.h */,
 				96EBB0891B1E416000D4B281 /* NewTripViewController.m */,
-				96EBB0CD1B1E677000D4B281 /* Trip.h */,
-				96EBB0CE1B1E677000D4B281 /* Trip.m */,
+				96EBB0DD1B1FDE7A00D4B281 /* Pin.h */,
+				96EBB0DE1B1FDE7A00D4B281 /* Pin.m */,
+				96EBB0D91B1FDE7A00D4B281 /* Trip.h */,
+				96EBB0DA1B1FDE7A00D4B281 /* Trip.m */,
 				96EBB0631B1E363300D4B281 /* Main.storyboard */,
 				96EBB0661B1E363300D4B281 /* Images.xcassets */,
 				96EBB0681B1E363300D4B281 /* LaunchScreen.xib */,
@@ -252,12 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EBB0DB1B1FDE7A00D4B281 /* Trip.m in Sources */,
 				96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */,
 				96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */,
-				96EBB0CF1B1E677000D4B281 /* Trip.m in Sources */,
 				96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */,
 				96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */,
 				96EBB0621B1E363300D4B281 /* TripTableViewController.m in Sources */,
+				96EBB0DF1B1FDE7A00D4B281 /* Pin.m in Sources */,
 				96EBB0591B1E363300D4B281 /* main.m in Sources */,
 				96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */,
 			);
@@ -268,8 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */,
-				96EBB0D01B1E677000D4B281 /* Trip.m in Sources */,
 				96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */,
+				96EBB0DC1B1FDE7A00D4B281 /* Trip.m in Sources */,
+				96EBB0E01B1FDE7A00D4B281 /* Pin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

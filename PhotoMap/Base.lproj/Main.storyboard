@@ -86,6 +86,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tripMapView" destination="0VC-uD-wvq" id="hVN-6c-OqI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="718-Ex-Bdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

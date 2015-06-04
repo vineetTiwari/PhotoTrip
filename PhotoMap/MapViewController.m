@@ -8,7 +8,12 @@
 
 #import "MapViewController.h"
 
-@interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate>{
+
+  CLLocationManager *_locationManager;
+  bool initialLocationSet;
+
+}
 
 @property (nonatomic) UIImagePickerController *imagePicker;
 
@@ -22,6 +27,26 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+
+
+  self.tripMapView.showsUserLocation = true;
+  self.tripMapView.delegate = self;
+
+  initialLocationSet = false;
+  _locationManager = [[CLLocationManager alloc] init];
+  [_locationManager requestWhenInUseAuthorization];
+  [_locationManager startUpdatingLocation];
+  _locationManager.delegate = self;
+
+  MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+  CLLocationCoordinate2D startPoint;
+  startPoint.latitude = 49.268950;
+  startPoint.longitude = -123.153739;
+  pin.coordinate = startPoint;
+  pin.title = @"start point";
+
+  [self.tripMapView addAnnotation:pin];
+
 
   [self setupImagePicker];
 }
@@ -77,6 +102,89 @@
 
 - (void)showImageAsAPin:(UIImage *)image {
 
+
+  
 }
 
+
+#pragma mark - CLLocationManagerDelegate -
+
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+  NSLog(@"Got error %@", [error localizedDescription]);
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+  CLLocation *location = [locations firstObject];
+
+  if (!initialLocationSet){
+
+    MKCoordinateRegion startingRegion;
+    CLLocationCoordinate2D loc = location.coordinate;
+    startingRegion.center = loc;
+    startingRegion.span.latitudeDelta = 0.02;
+    startingRegion.span.longitudeDelta = 0.02;
+    [self.tripMapView setRegion:startingRegion];
+
+    //This is still valid but won't zoom in
+    //[self.mapView setCenterCoordinate:location.coordinate];
+    initialLocationSet = true;
+  }
+
+  NSLog(@"Got location %@", location);
+}
+
+#pragma mark - MKMapViewDelegate -
+
+- (void)locationManager:(CLLocationManager *)manager
+didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+  //Here you would want to re-request startupdatinglocation
+  // if given authorization
+  //[_locationManager startUpdatingLocation];
+
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView
+            viewForAnnotation:(id<MKAnnotation>)annotation{
+
+  if (annotation == self.tripMapView.userLocation){
+    return nil; //default to blue dot
+  }
+  NSLog(@"%f, %f", annotation.coordinate.longitude,  annotation.coordinate.latitude);
+  static NSString* annotationIdentifier = @"startpoint";
+
+  MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+  [self.tripMapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+
+  if (!pinView) {
+    // if an existing pin view was not available, create one
+    pinView = [[MKPinAnnotationView alloc]
+               initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+  }
+
+  pinView.canShowCallout = YES;
+  pinView.pinColor = MKPinAnnotationColorGreen;
+  pinView.calloutOffset = CGPointMake(-15, 0);
+
+  return pinView;
+}
+
+- (void)mapView:(MKMapView *)mapView
+didSelectAnnotationView:(MKAnnotationView *)view{
+
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Click" message:@"You Done Clicked" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+  [alertView show];
+}
+
+
 @end
+
+
+
+
+
+
+
+
