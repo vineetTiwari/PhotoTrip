@@ -14,28 +14,14 @@
 		96EBB0651B1E363300D4B281 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96EBB0631B1E363300D4B281 /* Main.storyboard */; };
 		96EBB0671B1E363300D4B281 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96EBB0661B1E363300D4B281 /* Images.xcassets */; };
 		96EBB06A1B1E363300D4B281 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96EBB0681B1E363300D4B281 /* LaunchScreen.xib */; };
-		96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0751B1E363300D4B281 /* PhotoMapTests.m */; };
 		96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0801B1E366300D4B281 /* CoreDataStack.m */; };
 		96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0891B1E416000D4B281 /* NewTripViewController.m */; };
 		96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
-		96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
 		96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D51B1F890C00D4B281 /* MapKit.framework */; };
 		96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D71B1F891500D4B281 /* CoreLocation.framework */; };
 		96EBB0DB1B1FDE7A00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DA1B1FDE7A00D4B281 /* Trip.m */; };
-		96EBB0DC1B1FDE7A00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DA1B1FDE7A00D4B281 /* Trip.m */; };
 		96EBB0DF1B1FDE7A00D4B281 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DE1B1FDE7A00D4B281 /* Pin.m */; };
-		96EBB0E01B1FDE7A00D4B281 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DE1B1FDE7A00D4B281 /* Pin.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		96EBB0701B1E363300D4B281 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 96EBB04B1B1E363300D4B281 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 96EBB0521B1E363300D4B281;
-			remoteInfo = PhotoMap;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoTrip.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,9 +35,6 @@
 		96EBB0641B1E363300D4B281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96EBB0661B1E363300D4B281 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		96EBB0691B1E363300D4B281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		96EBB06F1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoTrip.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		96EBB0741B1E363300D4B281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96EBB0751B1E363300D4B281 /* PhotoMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapTests.m; sourceTree = "<group>"; };
 		96EBB07F1B1E366300D4B281 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		96EBB0801B1E366300D4B281 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 		96EBB0881B1E416000D4B281 /* NewTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTripViewController.h; sourceTree = "<group>"; };
@@ -76,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96EBB06C1B1E363300D4B281 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +68,6 @@
 				96EBB0D71B1F891500D4B281 /* CoreLocation.framework */,
 				96EBB0D51B1F890C00D4B281 /* MapKit.framework */,
 				96EBB0551B1E363300D4B281 /* PhotoMap */,
-				96EBB0721B1E363300D4B281 /* PhotoMapTests */,
 				96EBB0541B1E363300D4B281 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */,
-				96EBB06F1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,23 +115,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		96EBB0721B1E363300D4B281 /* PhotoMapTests */ = {
-			isa = PBXGroup;
-			children = (
-				96EBB0751B1E363300D4B281 /* PhotoMapTests.m */,
-				96EBB0731B1E363300D4B281 /* Supporting Files */,
-			);
-			path = PhotoMapTests;
-			sourceTree = "<group>";
-		};
-		96EBB0731B1E363300D4B281 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				96EBB0741B1E363300D4B281 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,24 +135,6 @@
 			productReference = 96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
-		96EBB06E1B1E363300D4B281 /* PhotoTrip.Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.Tests" */;
-			buildPhases = (
-				96EBB06B1B1E363300D4B281 /* Sources */,
-				96EBB06C1B1E363300D4B281 /* Frameworks */,
-				96EBB06D1B1E363300D4B281 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				96EBB0711B1E363300D4B281 /* PBXTargetDependency */,
-			);
-			name = PhotoTrip.Tests;
-			productName = PhotoMapTests;
-			productReference = 96EBB06F1B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_renameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -207,10 +146,6 @@
 				TargetAttributes = {
 					96EBB0521B1E363300D4B281 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					96EBB06E1B1E363300D4B281 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 96EBB0521B1E363300D4B281;
 					};
 				};
 			};
@@ -228,7 +163,6 @@
 			projectRoot = "";
 			targets = (
 				96EBB0521B1E363300D4B281 /* PhotoTrip */,
-				96EBB06E1B1E363300D4B281 /* PhotoTrip.Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,13 +175,6 @@
 				96EBB0651B1E363300D4B281 /* Main.storyboard in Resources */,
 				96EBB06A1B1E363300D4B281 /* LaunchScreen.xib in Resources */,
 				96EBB0671B1E363300D4B281 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96EBB06D1B1E363300D4B281 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,26 +197,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		96EBB06B1B1E363300D4B281 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96EBB0D41B1F885100D4B281 /* MapViewController.m in Sources */,
-				96EBB0761B1E363300D4B281 /* PhotoMapTests.m in Sources */,
-				96EBB0DC1B1FDE7A00D4B281 /* Trip.m in Sources */,
-				96EBB0E01B1FDE7A00D4B281 /* Pin.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		96EBB0711B1E363300D4B281 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 96EBB0521B1E363300D4B281 /* PhotoTrip */;
-			targetProxy = 96EBB0701B1E363300D4B281 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		96EBB0631B1E363300D4B281 /* Main.storyboard */ = {
@@ -411,40 +319,6 @@
 			};
 			name = Release;
 		};
-		96EBB07D1B1E363300D4B281 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PhotoMapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoMap.app/PhotoMap";
-			};
-			name = Debug;
-		};
-		96EBB07E1B1E363300D4B281 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PhotoMapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_renameTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoMap.app/PhotoMap";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -464,14 +338,7 @@
 				96EBB07B1B1E363300D4B281 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		96EBB07C1B1E363300D4B281 /* Build configuration list for PBXNativeTarget "PhotoTrip.Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				96EBB07D1B1E363300D4B281 /* Debug */,
-				96EBB07E1B1E363300D4B281 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

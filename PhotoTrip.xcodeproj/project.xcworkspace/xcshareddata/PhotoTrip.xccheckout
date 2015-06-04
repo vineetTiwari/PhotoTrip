@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D8B2AAEA-E97C-4FDA-90EA-28CF0E6B9724</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PhotoTrip</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>30C4BF19C0C16D894D7D1460CA11E9964867411B</key>
+		<string>https://github.com/vineetTiwari/PhotoTrip.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PhotoTrip.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>30C4BF19C0C16D894D7D1460CA11E9964867411B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vineetTiwari/PhotoTrip.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>30C4BF19C0C16D894D7D1460CA11E9964867411B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>30C4BF19C0C16D894D7D1460CA11E9964867411B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PhotoTrip</string>
+		</dict>
+	</array>
+</dict>
+</plist>

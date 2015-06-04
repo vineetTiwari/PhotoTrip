@@ -56,9 +56,10 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
   UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-  [self showImageAsAPin:chosenImage];
-  [self dismissViewControllerAnimated:YES completion:nil];
-  [self showImageAsAPin:chosenImage];
+  [self dismissViewControllerAnimated:YES completion:^{
+    [self showImageAsAPin:chosenImage];
+  }];
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -103,14 +104,13 @@
 }
 
 - (void)showImageAsAPin:(UIImage *)image {
-
   MKPointAnnotation *photoPin = [[MKPointAnnotation alloc] init];
   CLLocationCoordinate2D currentPoint;
   currentPoint.latitude = self.currentLocation.coordinate.latitude;
   currentPoint.longitude = self.currentLocation.coordinate.longitude;
   photoPin.coordinate = currentPoint;
   photoPin.title = @"currentLocation";
-
+  [self.tripMapView addAnnotation:photoPin];
 }
 
 
