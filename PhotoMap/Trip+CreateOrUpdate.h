@@ -1,5 +1,5 @@
 //
-//  Trip.m
+//  Trip+CreateOrUpdate.h
 //  PhotoTrip
 //
 //  Created by Vineet Tiwari on 2015-06-04.
@@ -7,13 +7,11 @@
 //
 
 #import "Trip.h"
-#import "Pin.h"
 
+@interface Trip (CreateOrUpdate)
 
-@implementation Trip
++ (Trip *)tripWithName:(NSString *)name date:(NSDate *)date;
 
-@dynamic date;
-@dynamic name;
-@dynamic pinRelation;
++ (NSString *)entityName;
 
 @end

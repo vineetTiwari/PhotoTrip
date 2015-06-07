@@ -7,8 +7,13 @@
 //
 
 #import "MapViewController.h"
+#import "CoreDataStack.h"
+#import "Pin.h"
+#import "DetailViewController.h"
+#import "Pin+CreatOrUpdate.h"
+#import "Trip+CreateOrUpdate.h"
 
-@interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate>{
+@interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate>{
 
   CLLocationManager *_locationManager;
   bool initialLocationSet;
@@ -17,6 +22,7 @@
 
 @property (nonatomic) UIImagePickerController *imagePicker;
 @property (nonatomic) CLLocation *currentLocation;
+@property (nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 - (IBAction)cameraButtonPressed:(id)sender;
 
@@ -28,7 +34,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
 
   self.tripMapView.showsUserLocation = true;
   self.tripMapView.delegate = self;
@@ -48,15 +53,35 @@
 
   [self.tripMapView addAnnotation:pin];
 
-
   [self setupImagePicker];
+
+  /////////////////////////////////////
+
+  CLLocationDegrees testLatitude = 43.0951;
+  CLLocationDegrees testLongitude = -79.0064;
+  CLLocationDegrees testLatDelta = 0.05;
+  CLLocationDegrees testLonDelta = 0.05;
+
+  MKCoordinateSpan testSpan = MKCoordinateSpanMake(testLatDelta, testLonDelta);
+
+  CLLocationCoordinate2D testLocation = CLLocationCoordinate2DMake(testLatitude, testLongitude);
+
+  MKCoordinateRegion testRegion = MKCoordinateRegionMake(testLocation, testSpan);
+
+  [self.tripMapView setRegion:testRegion animated:YES];
+
+  //////////////////////////////////////
+  
+
+
 }
 
 #pragma mark - UIImagePickerDelegate -
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+  UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
   [self dismissViewControllerAnimated:YES completion:^{
+
     [self showImageAsAPin:chosenImage];
   }];
 
@@ -104,13 +129,40 @@
 }
 
 - (void)showImageAsAPin:(UIImage *)image {
-  MKPointAnnotation *photoPin = [[MKPointAnnotation alloc] init];
-  CLLocationCoordinate2D currentPoint;
+  // create model object 'Pin'
+
+
+
+  // update view
+ CLLocationCoordinate2D currentPoint;
   currentPoint.latitude = self.currentLocation.coordinate.latitude;
   currentPoint.longitude = self.currentLocation.coordinate.longitude;
-  photoPin.coordinate = currentPoint;
-  photoPin.title = @"currentLocation";
+
+
+  Pin *photoPin = [[Pin alloc] initWithCoordinate:currentPoint andTitle:@"Hello" andImage:image];
+
+
   [self.tripMapView addAnnotation:photoPin];
+
+
+
+ //  CLLocationCoordinate2D lisbon;
+//  lisbon.latitude = 38.7139;
+//  lisbon.longitude = - 9.1394;
+
+//  photoPin.coordinate = currentPoint;
+//  photoPin.title = @"Photo Pinned";
+
+//  MKAnnotationView *pinView = [MKAnnotationView alloc] initWith
+
+
+
+
+//  NSError* fetchError;
+//  [self.fetchedResultsController performFetch:&fetchError];
+//  if (fetchError) {
+//    NSLog(@"%@", fetchError);
+//  }
 }
 
 
@@ -140,7 +192,7 @@
     initialLocationSet = true;
   }
 
-  NSLog(@"Got location %@", self.currentLocation);
+//  NSLog(@"Got location %@", self.currentLocation);
 }
 
 #pragma mark - MKMapViewDelegate -
@@ -153,36 +205,116 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView
-            viewForAnnotation:(id<MKAnnotation>)annotation{
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
 
   if (annotation == self.tripMapView.userLocation){
     return nil; //default to blue dot
   }
-  NSLog(@"%f, %f", annotation.coordinate.longitude,  annotation.coordinate.latitude);
-  static NSString* annotationIdentifier = @"startpoint";
 
-  MKPinAnnotationView* pinView = (MKPinAnnotationView *)
-  [self.tripMapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+  Pin *pin = (Pin*) annotation;
 
-  if (!pinView) {
-    // if an existing pin view was not available, create one
-    pinView = [[MKPinAnnotationView alloc]
-               initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
-  }
+//  NSLog(@"%f, %f", annotation.coordinate.longitude,  annotation.coordinate.latitude);
 
-  pinView.canShowCallout = YES;
-  pinView.pinColor = MKPinAnnotationColorGreen;
-  pinView.calloutOffset = CGPointMake(-15, 0);
+//
+//  if ([annotation isKindOfClass:[BridgeAnnotation class]]) // for Golden Gate Bridge
+//  {
+//    returnedAnnotationView = [BridgeAnnotation createViewAnnotationForMapView:self.mapView annotation:annotation];
+//    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
+//    ((MKPinAnnotationView *)returnedAnnotationView).rightCalloutAccessoryView = rightButton;
+//  }
+
+//  if (pin){
+
+    static NSString* annotationIdentifier = @"startpoint";
+
+    MKPinAnnotationView* pinView = [[MKPinAnnotationView alloc]
+                                    initWithAnnotation:pin reuseIdentifier:annotationIdentifier];
+
+    pinView.canShowCallout = YES;
+    pinView.pinColor = MKPinAnnotationColorGreen;
+    pinView.annotation = annotation;
+    pinView.calloutOffset = CGPointMake(-15, 0);
+
+    pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
+    //  DetailViewController *detailViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    //
+    //  [self.navigationController pushViewController:detailViewController animated:YES];
+
+//  }
 
   return pinView;
 }
 
-- (void)mapView:(MKMapView *)mapView
-didSelectAnnotationView:(MKAnnotationView *)view{
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
 
-  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Click" message:@"You Done Clicked" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-  [alertView show];
+
+  Pin *pin = (Pin*)view.annotation;
+
+  //NSLog(@"view.annotation is %@", );
+
+    DetailViewController *detailViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"DetailViewController"];
+
+    detailViewController.image = pin.image;
+
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
+
+}
+
+
+
+//   {
+//      // for iPad, we use a popover
+//      if (self.bridgePopoverController == nil)
+//      {
+//        _bridgePopoverController = [[UIPopoverController alloc] initWithContentViewController:detailViewController];
+//      }
+//      [self.bridgePopoverController presentPopoverFromRect:control.bounds
+//                                                    inView:control
+//                                  permittedArrowDirections:UIPopoverArrowDirectionLeft
+//                                                  animated:YES];
+//    } else {
+//
+//      // for iPhone we navigate to a detail view controller using UINavigationController  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+
+
+
+
+//- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+//
+//  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Click" message:@"You Done Clicked" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+//  [alertView show];
+//}
+
+#pragma mark - Fetching The Data -
+
+- (NSFetchRequest *)pinFetchRequest {
+
+
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Pin"];
+
+  fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:NO]];
+
+  return fetchRequest;
+}
+
+- (NSFetchedResultsController *)fetchedResultsController {
+
+  if (_fetchedResultsController != nil) {
+
+    return _fetchedResultsController;
+  }
+
+  CoreDataStack *coreDataStack = [CoreDataStack defaultStack];
+  NSFetchRequest *fetchRequest = [self pinFetchRequest];
+  _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:coreDataStack.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+
+  _fetchedResultsController.delegate = self;
+
+  return _fetchedResultsController;
 }
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96B362491B214D7E00443B2E /* Trip+CreateOrUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */; };
+		96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9954F1B24EDE8003DFF64 /* DetailViewController.m */; };
 		96EBB0591B1E363300D4B281 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0581B1E363300D4B281 /* main.m */; };
 		96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB05B1B1E363300D4B281 /* AppDelegate.m */; };
 		96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB05D1B1E363300D4B281 /* PhotoMap.xcdatamodeld */; };
@@ -19,11 +21,16 @@
 		96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0D21B1F885100D4B281 /* MapViewController.m */; };
 		96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D51B1F890C00D4B281 /* MapKit.framework */; };
 		96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D71B1F891500D4B281 /* CoreLocation.framework */; };
-		96EBB0DB1B1FDE7A00D4B281 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DA1B1FDE7A00D4B281 /* Trip.m */; };
-		96EBB0DF1B1FDE7A00D4B281 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0DE1B1FDE7A00D4B281 /* Pin.m */; };
+		96FDE6751B21031600429577 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE6741B21031600429577 /* Pin.m */; };
+		96FDE6781B21033B00429577 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE6771B21033B00429577 /* Trip.m */; };
+		96FDE67B1B213DFC00429577 /* Pin+CreatOrUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96B362471B214D7E00443B2E /* Trip+CreateOrUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Trip+CreateOrUpdate.h"; sourceTree = "<group>"; };
+		96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Trip+CreateOrUpdate.m"; sourceTree = "<group>"; };
+		96C9954E1B24EDE8003DFF64 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		96C9954F1B24EDE8003DFF64 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoTrip.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EBB0571B1E363300D4B281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96EBB0581B1E363300D4B281 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -43,10 +50,12 @@
 		96EBB0D21B1F885100D4B281 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		96EBB0D51B1F890C00D4B281 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		96EBB0D71B1F891500D4B281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		96EBB0D91B1FDE7A00D4B281 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
-		96EBB0DA1B1FDE7A00D4B281 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
-		96EBB0DD1B1FDE7A00D4B281 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
-		96EBB0DE1B1FDE7A00D4B281 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+		96FDE6731B21031600429577 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
+		96FDE6741B21031600429577 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+		96FDE6761B21033B00429577 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
+		96FDE6771B21033B00429577 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
+		96FDE6791B213DFC00429577 /* Pin+CreatOrUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pin+CreatOrUpdate.h"; sourceTree = "<group>"; };
+		96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pin+CreatOrUpdate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +100,18 @@
 				96EBB0611B1E363300D4B281 /* TripTableViewController.m */,
 				96EBB0D11B1F885100D4B281 /* MapViewController.h */,
 				96EBB0D21B1F885100D4B281 /* MapViewController.m */,
+				96C9954E1B24EDE8003DFF64 /* DetailViewController.h */,
+				96C9954F1B24EDE8003DFF64 /* DetailViewController.m */,
 				96EBB0881B1E416000D4B281 /* NewTripViewController.h */,
 				96EBB0891B1E416000D4B281 /* NewTripViewController.m */,
-				96EBB0DD1B1FDE7A00D4B281 /* Pin.h */,
-				96EBB0DE1B1FDE7A00D4B281 /* Pin.m */,
-				96EBB0D91B1FDE7A00D4B281 /* Trip.h */,
-				96EBB0DA1B1FDE7A00D4B281 /* Trip.m */,
+				96FDE6731B21031600429577 /* Pin.h */,
+				96FDE6741B21031600429577 /* Pin.m */,
+				96FDE6791B213DFC00429577 /* Pin+CreatOrUpdate.h */,
+				96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */,
+				96FDE6761B21033B00429577 /* Trip.h */,
+				96FDE6771B21033B00429577 /* Trip.m */,
+				96B362471B214D7E00443B2E /* Trip+CreateOrUpdate.h */,
+				96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */,
 				96EBB0631B1E363300D4B281 /* Main.storyboard */,
 				96EBB0661B1E363300D4B281 /* Images.xcassets */,
 				96EBB0681B1E363300D4B281 /* LaunchScreen.xib */,
@@ -146,6 +161,7 @@
 				TargetAttributes = {
 					96EBB0521B1E363300D4B281 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = YK8KF69N98;
 					};
 				};
 			};
@@ -185,15 +201,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96EBB0DB1B1FDE7A00D4B281 /* Trip.m in Sources */,
 				96EBB0811B1E366300D4B281 /* CoreDataStack.m in Sources */,
 				96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */,
 				96EBB0D31B1F885100D4B281 /* MapViewController.m in Sources */,
 				96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */,
 				96EBB0621B1E363300D4B281 /* TripTableViewController.m in Sources */,
-				96EBB0DF1B1FDE7A00D4B281 /* Pin.m in Sources */,
 				96EBB0591B1E363300D4B281 /* main.m in Sources */,
 				96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */,
+				96FDE6751B21031600429577 /* Pin.m in Sources */,
+				96B362491B214D7E00443B2E /* Trip+CreateOrUpdate.m in Sources */,
+				96FDE6781B21033B00429577 /* Trip.m in Sources */,
+				96FDE67B1B213DFC00429577 /* Pin+CreatOrUpdate.m in Sources */,
+				96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,9 +322,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_rename;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -313,9 +335,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_rename;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
