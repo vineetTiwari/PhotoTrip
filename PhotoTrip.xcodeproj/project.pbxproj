@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96B362491B214D7E00443B2E /* Trip+CreateOrUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */; };
 		96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9954F1B24EDE8003DFF64 /* DetailViewController.m */; };
+		96EA9C211B25120100637892 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA9C201B25120100637892 /* Photos.framework */; };
 		96EBB0591B1E363300D4B281 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0581B1E363300D4B281 /* main.m */; };
 		96EBB05C1B1E363300D4B281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB05B1B1E363300D4B281 /* AppDelegate.m */; };
 		96EBB05F1B1E363300D4B281 /* PhotoMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB05D1B1E363300D4B281 /* PhotoMap.xcdatamodeld */; };
@@ -23,14 +23,12 @@
 		96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBB0D71B1F891500D4B281 /* CoreLocation.framework */; };
 		96FDE6751B21031600429577 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE6741B21031600429577 /* Pin.m */; };
 		96FDE6781B21033B00429577 /* Trip.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE6771B21033B00429577 /* Trip.m */; };
-		96FDE67B1B213DFC00429577 /* Pin+CreatOrUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96B362471B214D7E00443B2E /* Trip+CreateOrUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Trip+CreateOrUpdate.h"; sourceTree = "<group>"; };
-		96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Trip+CreateOrUpdate.m"; sourceTree = "<group>"; };
 		96C9954E1B24EDE8003DFF64 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		96C9954F1B24EDE8003DFF64 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		96EA9C201B25120100637892 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		96EBB0531B1E363300D4B281 /* PhotoTrip.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoTrip.temp_caseinsensitive_rename.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96EBB0571B1E363300D4B281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96EBB0581B1E363300D4B281 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,8 +52,6 @@
 		96FDE6741B21031600429577 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
 		96FDE6761B21033B00429577 /* Trip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trip.h; sourceTree = "<group>"; };
 		96FDE6771B21033B00429577 /* Trip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trip.m; sourceTree = "<group>"; };
-		96FDE6791B213DFC00429577 /* Pin+CreatOrUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Pin+CreatOrUpdate.h"; sourceTree = "<group>"; };
-		96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Pin+CreatOrUpdate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EA9C211B25120100637892 /* Photos.framework in Frameworks */,
 				96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */,
 				96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */,
 			);
@@ -74,6 +71,7 @@
 		96EBB04A1B1E363300D4B281 = {
 			isa = PBXGroup;
 			children = (
+				96EA9C201B25120100637892 /* Photos.framework */,
 				96EBB0D71B1F891500D4B281 /* CoreLocation.framework */,
 				96EBB0D51B1F890C00D4B281 /* MapKit.framework */,
 				96EBB0551B1E363300D4B281 /* PhotoMap */,
@@ -106,12 +104,8 @@
 				96EBB0891B1E416000D4B281 /* NewTripViewController.m */,
 				96FDE6731B21031600429577 /* Pin.h */,
 				96FDE6741B21031600429577 /* Pin.m */,
-				96FDE6791B213DFC00429577 /* Pin+CreatOrUpdate.h */,
-				96FDE67A1B213DFC00429577 /* Pin+CreatOrUpdate.m */,
 				96FDE6761B21033B00429577 /* Trip.h */,
 				96FDE6771B21033B00429577 /* Trip.m */,
-				96B362471B214D7E00443B2E /* Trip+CreateOrUpdate.h */,
-				96B362481B214D7E00443B2E /* Trip+CreateOrUpdate.m */,
 				96EBB0631B1E363300D4B281 /* Main.storyboard */,
 				96EBB0661B1E363300D4B281 /* Images.xcassets */,
 				96EBB0681B1E363300D4B281 /* LaunchScreen.xib */,
@@ -209,9 +203,7 @@
 				96EBB0591B1E363300D4B281 /* main.m in Sources */,
 				96EBB08A1B1E416000D4B281 /* NewTripViewController.m in Sources */,
 				96FDE6751B21031600429577 /* Pin.m in Sources */,
-				96B362491B214D7E00443B2E /* Trip+CreateOrUpdate.m in Sources */,
 				96FDE6781B21033B00429577 /* Trip.m in Sources */,
-				96FDE67B1B213DFC00429577 /* Pin+CreatOrUpdate.m in Sources */,
 				96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +317,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";
@@ -338,6 +331,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PhotoMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = PhotoTrip.temp_caseinsensitive_rename;
 				PROVISIONING_PROFILE = "";

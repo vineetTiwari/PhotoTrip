@@ -10,8 +10,7 @@
 #import "CoreDataStack.h"
 #import "Pin.h"
 #import "DetailViewController.h"
-#import "Pin+CreatOrUpdate.h"
-#import "Trip+CreateOrUpdate.h"
+#import <Photos/Photos.h>
 
 @interface MapViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate>{
 
@@ -79,11 +78,25 @@
 #pragma mark - UIImagePickerDelegate -
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-  UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
-  [self dismissViewControllerAnimated:YES completion:^{
 
-    [self showImageAsAPin:chosenImage];
-  }];
+
+  if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:YES completion:^{
+
+      [self showImageAsAPin:chosenImage];
+    }];
+  }else{
+
+    PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs:@[info[@"UIImagePickerControllerReferenceURL"]] options:nil];
+    PHAsset *asset = [[PHAsset fetchAssetsWithALAssetURLs:@[info[@"UIImagePickerControllerReferenceURL"]] options:nil] lastObject];
+
+    NSLog(@"info %@", info[UIImagePickerControllerReferenceURL]);
+
+    NSLog(@"results %@", result);
+    NSLog(@"asset is %@", asset);
+
+  }
 
 }
 
