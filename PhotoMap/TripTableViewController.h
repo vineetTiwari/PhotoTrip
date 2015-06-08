@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TripTableViewController : UITableViewController
+@interface TripTableViewController : UITableViewController <UITableViewDelegate>
 
 
 @end

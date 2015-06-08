@@ -11,10 +11,12 @@
 #import "CoreDataStack.h"
 #import "Trip.h"
 #import "MapViewController.h"
+#import "TripCell.h"
 
 @interface TripTableViewController ()<NSFetchedResultsControllerDelegate>
 
 @property (nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic) NSMutableArray *trips;
 
 @end
 
@@ -23,8 +25,36 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  self.tableView.delegate = self;
+
+  self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+  self.tableView.backgroundColor = [UIColor colorWithRed:78.0/225.0 green:81.0/225.0 blue:69.0/225.0 alpha:1.0];
+
   [self.fetchedResultsController performFetch:nil];
+
+  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateTable) userInfo:nil repeats:YES];
+
 }
+
+#pragma mark - UITableViewDataDelegate protocol methods
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  return 50.0f;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(TripCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+  cell.backgroundColor = [self colorForIndex:indexPath.row];
+}
+
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+  TripCell *cell = [[TripCell alloc] init];
+
+  return cell.crossLabel.text;
+}
+
 
 #pragma mark - TableViewControllerDataSource -
 
@@ -32,30 +62,45 @@
 
   id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController  sections][section];
 
+//  self.trips = [[sectionInfo objects]mutableCopy];
+
+//  return self.trips.count;
+
   return [sectionInfo numberOfObjects];
 
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
+  TripCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
   Trip *trip = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
-  cell.textLabel.text = trip.name;
+  cell.tripName.text = trip.name;
+
+  cell.tripName.backgroundColor = [UIColor clearColor];
 
   NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-  [dateFormat setDateFormat:@"MMMM dd, YYYY - hh:mma"];
+  [dateFormat setDateFormat:@"MMMM dd, YYYY"];
 
-  cell.detailTextLabel.text = [dateFormat stringFromDate:trip.date]; ;
+  cell.tripDate.text = [dateFormat stringFromDate:trip.date]; ;
 
   return cell;
 
 }
 
+- (UIColor*)colorForIndex:(NSInteger) index {
+
+  NSUInteger itemCount = self.tableView.indexPathsForVisibleRows.count - 0.6;
+  float val = ((float)index / (float)itemCount) * 0.6;
+  return [UIColor colorWithRed: 1.0 green:val blue: 0.0 alpha:1.0];
+}
+
+
 #pragma mark - Segue - 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
   if ([segue.identifier isEqualToString:@"presentModally"]) {
 
@@ -78,7 +123,7 @@
 
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Trip"];
 
-  fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+  fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];
 
   return fetchRequest;
 }
@@ -113,6 +158,7 @@
 
   [[coreDataStack managedObjectContext] deleteObject:trip];
   [coreDataStack saveContext];
+  [self.tableView reloadData];
 }
 
 #pragma mark - Deleting Animation Logic -
@@ -124,7 +170,7 @@
   [self.tableView beginUpdates];
 }
 
--(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
 
   switch (type) {
     case NSFetchedResultsChangeInsert:
@@ -148,40 +194,9 @@
   [self.tableView endUpdates];
 }
 
+- (void)updateTable {
 
-
-
+  [self.tableView reloadData];
+}
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

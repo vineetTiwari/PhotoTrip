@@ -2,37 +2,69 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n3B-Al-CJD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Trips-->
         <scene sceneID="uEf-AG-N6N">
             <objects>
                 <tableViewController id="tcl-FR-1wD" customClass="TripTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ihY-I5-TYj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" id="ihY-I5-TYj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="2" indentationWidth="10" reuseIdentifier="Cell" textLabel="Snx-lg-458" detailTextLabel="lj0-4s-IAc" style="IBUITableViewCellStyleSubtitle" id="fev-HC-JxH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationLevel="2" indentationWidth="10" reuseIdentifier="Cell" id="fev-HC-JxH" customClass="TripCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fev-HC-JxH" id="0ue-6N-5i6">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Snx-lg-458">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1K-cT-VKc">
+                                            <rect key="frame" x="8" y="26" width="97.5" height="20"/>
+                                            <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="2aV-pS-dF5"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Trip Name">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="20" name="Palatino-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.050980396568775177" green="0.12941177189350128" blue="0.15294118225574493" alpha="0.68000000000000005" colorSpace="deviceRGB"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lj0-4s-IAc">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJj-Mi-Yfj">
+                                            <rect key="frame" x="8" y="46" width="50" height="15.5"/>
+                                            <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.40000000000000002" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15.5" id="FNd-NR-0ui"/>
+                                            </constraints>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Trip Date">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="12" name="Palatino-Roman"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JJj-Mi-Yfj" firstAttribute="top" secondItem="a1K-cT-VKc" secondAttribute="bottom" id="1vO-ng-Qe5"/>
+                                        <constraint firstItem="a1K-cT-VKc" firstAttribute="leading" secondItem="0ue-6N-5i6" secondAttribute="leadingMargin" id="ID7-wS-vxi"/>
+                                        <constraint firstItem="JJj-Mi-Yfj" firstAttribute="leading" secondItem="0ue-6N-5i6" secondAttribute="leadingMargin" id="Wdu-Fh-qvX"/>
+                                        <constraint firstAttribute="centerY" secondItem="a1K-cT-VKc" secondAttribute="centerY" constant="7.25" id="eU5-de-PDV"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="tripDate" destination="JJj-Mi-Yfj" id="HJ5-Es-u6p"/>
+                                    <outlet property="tripName" destination="a1K-cT-VKc" id="tvK-OM-AAB"/>
                                     <segue destination="Txh-2c-zuL" kind="show" identifier="show" id="D24-bc-4uR"/>
                                 </connections>
                             </tableViewCell>
@@ -114,7 +146,7 @@
                         <constraints>
                             <constraint firstItem="Jly-HK-q3s" firstAttribute="leading" secondItem="cHX-Gr-y4A" secondAttribute="leading" id="Ve7-gR-awT"/>
                             <constraint firstAttribute="trailing" secondItem="Jly-HK-q3s" secondAttribute="trailing" id="bsi-YE-2DC"/>
-                            <constraint firstItem="PPX-MQ-Mve" firstAttribute="top" secondItem="Jly-HK-q3s" secondAttribute="bottom" id="q9O-sk-iCJ"/>
+                            <constraint firstItem="PPX-MQ-Mve" firstAttribute="top" secondItem="Jly-HK-q3s" secondAttribute="bottom" id="lok-O9-1Gu"/>
                             <constraint firstItem="Jly-HK-q3s" firstAttribute="top" secondItem="cHX-Gr-y4A" secondAttribute="top" id="x5x-Ht-AF2"/>
                         </constraints>
                     </view>

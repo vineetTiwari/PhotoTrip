@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TripTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  // Override point for customization after application launch.
+
+  // Override point for customization after application launch
+  TripTableViewController *tripViewController = [[TripTableViewController alloc] init];
+
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:tripViewController];
+  
+#pragma unused(navController)
+
+  [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackOpaque];
+
   return YES;
 }
 

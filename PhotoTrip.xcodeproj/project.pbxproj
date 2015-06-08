@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		966530921B258D32005ACA00 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966530911B258D32005ACA00 /* QuartzCore.framework */; };
+		966530941B258D3C005ACA00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966530931B258D3C005ACA00 /* CoreGraphics.framework */; };
+		966530971B258F80005ACA00 /* TripCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 966530961B258F80005ACA00 /* TripCell.m */; };
 		96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C9954F1B24EDE8003DFF64 /* DetailViewController.m */; };
 		96EA9C211B25120100637892 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EA9C201B25120100637892 /* Photos.framework */; };
 		96EBB0591B1E363300D4B281 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBB0581B1E363300D4B281 /* main.m */; };
@@ -26,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		966530911B258D32005ACA00 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		966530931B258D3C005ACA00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		966530951B258F80005ACA00 /* TripCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripCell.h; sourceTree = "<group>"; };
+		966530961B258F80005ACA00 /* TripCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripCell.m; sourceTree = "<group>"; };
 		96C9954E1B24EDE8003DFF64 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		96C9954F1B24EDE8003DFF64 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		96EA9C201B25120100637892 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966530941B258D3C005ACA00 /* CoreGraphics.framework in Frameworks */,
+				966530921B258D32005ACA00 /* QuartzCore.framework in Frameworks */,
 				96EA9C211B25120100637892 /* Photos.framework in Frameworks */,
 				96EBB0D81B1F891500D4B281 /* CoreLocation.framework in Frameworks */,
 				96EBB0D61B1F890C00D4B281 /* MapKit.framework in Frameworks */,
@@ -68,12 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		96EBB04A1B1E363300D4B281 = {
+		966530901B258CEE005ACA00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				966530931B258D3C005ACA00 /* CoreGraphics.framework */,
+				966530911B258D32005ACA00 /* QuartzCore.framework */,
 				96EA9C201B25120100637892 /* Photos.framework */,
 				96EBB0D71B1F891500D4B281 /* CoreLocation.framework */,
 				96EBB0D51B1F890C00D4B281 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96EBB04A1B1E363300D4B281 = {
+			isa = PBXGroup;
+			children = (
+				966530901B258CEE005ACA00 /* Frameworks */,
 				96EBB0551B1E363300D4B281 /* PhotoMap */,
 				96EBB0541B1E363300D4B281 /* Products */,
 			);
@@ -96,6 +115,8 @@
 				96EBB05B1B1E363300D4B281 /* AppDelegate.m */,
 				96EBB0601B1E363300D4B281 /* TripTableViewController.h */,
 				96EBB0611B1E363300D4B281 /* TripTableViewController.m */,
+				966530951B258F80005ACA00 /* TripCell.h */,
+				966530961B258F80005ACA00 /* TripCell.m */,
 				96EBB0D11B1F885100D4B281 /* MapViewController.h */,
 				96EBB0D21B1F885100D4B281 /* MapViewController.m */,
 				96C9954E1B24EDE8003DFF64 /* DetailViewController.h */,
@@ -205,6 +226,7 @@
 				96FDE6751B21031600429577 /* Pin.m in Sources */,
 				96FDE6781B21033B00429577 /* Trip.m in Sources */,
 				96C995501B24EDE8003DFF64 /* DetailViewController.m in Sources */,
+				966530971B258F80005ACA00 /* TripCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

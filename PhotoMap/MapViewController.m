@@ -60,25 +60,12 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
 
+  UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+  [self dismissViewControllerAnimated:YES completion:^{
 
-  if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
-    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
-    [self dismissViewControllerAnimated:YES completion:^{
+    [self showImageAsAPin:chosenImage];
 
-      [self showImageAsAPin:chosenImage];
-    }];
-  }else{
-
-    PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs:@[info[@"UIImagePickerControllerReferenceURL"]] options:nil];
-    PHAsset *asset = [[PHAsset fetchAssetsWithALAssetURLs:@[info[@"UIImagePickerControllerReferenceURL"]] options:nil] lastObject];
-
-    NSLog(@"info %@", info[UIImagePickerControllerReferenceURL]);
-
-    NSLog(@"results %@", result);
-    NSLog(@"asset is %@", asset);
-
-  }
-
+  }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -123,22 +110,15 @@
 }
 
 - (void)showImageAsAPin:(UIImage *)image {
-  // create model object 'Pin'
 
-
-
-  // update view
  CLLocationCoordinate2D currentPoint;
   currentPoint.latitude = self.currentLocation.coordinate.latitude;
   currentPoint.longitude = self.currentLocation.coordinate.longitude;
 
-
-  Pin *photoPin = [[Pin alloc] initWithCoordinate:currentPoint andTitle:@"Hello" andImage:image];
-
+  Pin *photoPin = [[Pin alloc] initWithCoordinate:currentPoint andTitle:@"Tap Me" andImage:image];
 
   [self.tripMapView addAnnotation:photoPin];
 }
-
 
 #pragma mark - CLLocationManagerDelegate -
 
@@ -187,7 +167,7 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
                                     initWithAnnotation:pin reuseIdentifier:annotationIdentifier];
 
     pinView.canShowCallout = YES;
-    pinView.pinColor = MKPinAnnotationColorGreen;
+//    pinView.pinColor = MKPinAnnotationColorGreen;
     pinView.annotation = annotation;
     pinView.calloutOffset = CGPointMake(-15, 0);
 
