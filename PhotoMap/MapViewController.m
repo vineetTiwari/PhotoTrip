@@ -54,25 +54,6 @@
 
   [self setupImagePicker];
 
-  /////////////////////////////////////
-
-  CLLocationDegrees testLatitude = 43.0951;
-  CLLocationDegrees testLongitude = -79.0064;
-  CLLocationDegrees testLatDelta = 0.05;
-  CLLocationDegrees testLonDelta = 0.05;
-
-  MKCoordinateSpan testSpan = MKCoordinateSpanMake(testLatDelta, testLonDelta);
-
-  CLLocationCoordinate2D testLocation = CLLocationCoordinate2DMake(testLatitude, testLongitude);
-
-  MKCoordinateRegion testRegion = MKCoordinateRegionMake(testLocation, testSpan);
-
-  [self.tripMapView setRegion:testRegion animated:YES];
-
-  //////////////////////////////////////
-  
-
-
 }
 
 #pragma mark - UIImagePickerDelegate -
@@ -156,26 +137,6 @@
 
 
   [self.tripMapView addAnnotation:photoPin];
-
-
-
- //  CLLocationCoordinate2D lisbon;
-//  lisbon.latitude = 38.7139;
-//  lisbon.longitude = - 9.1394;
-
-//  photoPin.coordinate = currentPoint;
-//  photoPin.title = @"Photo Pinned";
-
-//  MKAnnotationView *pinView = [MKAnnotationView alloc] initWith
-
-
-
-
-//  NSError* fetchError;
-//  [self.fetchedResultsController performFetch:&fetchError];
-//  if (fetchError) {
-//    NSLog(@"%@", fetchError);
-//  }
 }
 
 
@@ -200,44 +161,25 @@
     startingRegion.span.longitudeDelta = 0.02;
     [self.tripMapView setRegion:startingRegion];
 
-    //This is still valid but won't zoom in
-    //[self.mapView setCenterCoordinate:location.coordinate];
     initialLocationSet = true;
   }
 
-//  NSLog(@"Got location %@", self.currentLocation);
 }
 
 #pragma mark - MKMapViewDelegate -
 
 - (void)locationManager:(CLLocationManager *)manager
 didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-  //Here you would want to re-request startupdatinglocation
-  // if given authorization
-  //[_locationManager startUpdatingLocation];
 
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
 
   if (annotation == self.tripMapView.userLocation){
-    return nil; //default to blue dot
+    return nil;
   }
 
   Pin *pin = (Pin*) annotation;
-
-//  NSLog(@"%f, %f", annotation.coordinate.longitude,  annotation.coordinate.latitude);
-
-//
-//  if ([annotation isKindOfClass:[BridgeAnnotation class]]) // for Golden Gate Bridge
-//  {
-//    returnedAnnotationView = [BridgeAnnotation createViewAnnotationForMapView:self.mapView annotation:annotation];
-//    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    [rightButton addTarget:nil action:nil forControlEvents:UIControlEventTouchUpInside];
-//    ((MKPinAnnotationView *)returnedAnnotationView).rightCalloutAccessoryView = rightButton;
-//  }
-
-//  if (pin){
 
     static NSString* annotationIdentifier = @"startpoint";
 
@@ -251,12 +193,6 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 
     pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
-    //  DetailViewController *detailViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    //
-    //  [self.navigationController pushViewController:detailViewController animated:YES];
-
-//  }
-
   return pinView;
 }
 
@@ -264,8 +200,6 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 
 
   Pin *pin = (Pin*)view.annotation;
-
-  //NSLog(@"view.annotation is %@", );
 
     DetailViewController *detailViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"DetailViewController"];
 
@@ -275,32 +209,6 @@ didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
 
 
 }
-
-
-
-//   {
-//      // for iPad, we use a popover
-//      if (self.bridgePopoverController == nil)
-//      {
-//        _bridgePopoverController = [[UIPopoverController alloc] initWithContentViewController:detailViewController];
-//      }
-//      [self.bridgePopoverController presentPopoverFromRect:control.bounds
-//                                                    inView:control
-//                                  permittedArrowDirections:UIPopoverArrowDirectionLeft
-//                                                  animated:YES];
-//    } else {
-//
-//      // for iPhone we navigate to a detail view controller using UINavigationController  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-
-
-
-
-
-//- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
-//
-//  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Click" message:@"You Done Clicked" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
-//  [alertView show];
-//}
 
 #pragma mark - Fetching The Data -
 

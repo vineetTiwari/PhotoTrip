@@ -14,8 +14,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
-//  Pin *pin = [[Pin alloc] init];
-
   self.photoImageView.image = self.image;
 }
 
